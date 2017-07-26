@@ -286,18 +286,6 @@ void SOSD_cloud_listen_loop(void) {
                 break;
 
 
-            case SOS_MSG_TYPE_QUERY:
-                // Allocate space for a response.
-                SOS_buffer_init_sized_locking(SOS, &query_results, 2048, false);
-                // Service the query w/locking.  (Packs the results in 'response' ready to send.)
-                SOSD_db_handle_sosa_query(msg, query_results);
-                // Send the results back to the asking analytics rank.
-                MPI_Ssend((void *) query_results->data, query_results->len, MPI_CHAR, status.MPI_SOURCE, 0, MPI_COMM_WORLD);
-                // Clean up our buffers.
-                SOS_buffer_destroy(msg);
-                SOS_buffer_destroy(query_results);
-                break;
-
             case SOS_MSG_TYPE_SHUTDOWN:   SOSD.daemon.running = 0;
             default:                      SOSD_handle_unknown    (msg); break;
             }
