@@ -182,6 +182,7 @@ if(SOSD_CLOUD_SYNC)
       "evpath"
       "ffs"
       "atl"
+      "ibverbs"
       "${SQLITE3_LIBRARY}"
 	  "${DYNAMICLIB}" stdc++)
     if(APPLE)
