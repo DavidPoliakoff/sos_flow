@@ -316,5 +316,5 @@ INSTALL(FILES ../scripts/showdb DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
   OWNER_READ GROUP_EXECUTE GROUP_READ
   WORLD_EXECUTE WORLD_READ)
 
-INSTALL(FILES sos.h sos_types.h sos_qhashtbl.h sos_pipe.h sos_buffer.h DESTINATION include)
+INSTALL(FILES sos.h sosa.h sos_types.h sos_qhashtbl.h sos_pipe.h sos_buffer.h DESTINATION include)
 #INSTALL(TARGETS sos_pipe sos_buffer sos sosa sosd_stop sosd_probe demo_app demo_sweep proc_app RUNTIME DESTINATION bin LIBRARY DESTINATION lib ARCHIVE DESTINATION lib) 
